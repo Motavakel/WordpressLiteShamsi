@@ -46,7 +46,7 @@
             </tbody>
         </table>
         <p class="submit">
-            <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php echo esc_html__('Save', 'lite-shamsi') ?>">
+            <input type="submit" name="lite_shamsi_submit" id="submit" class="button button-primary" value="<?php echo esc_html__('Save', 'lite-shamsi') ?>">
             <?php wp_nonce_field('_wpnonce', '_wpnonce'); ?>
         </p>
     </form>

@@ -65,7 +65,7 @@ class Datekit_Function
 
     public function admin_notice_success_save()
     {
-        if (isset($_POST['submit']) && check_admin_referer('_wpnonce')) {
+        if (isset($_POST['lite_shamsi_submit']) && check_admin_referer('_wpnonce')) {
             echo wp_kses_post('<div class="notice notice-success is-dismissible ' . (strpos(get_locale(), 'fa') === 0 ? 'jalali-cal-notice-rtl' : 'jalali-cal-notice-ltr') . '">
             <p>' . esc_html__('Settings have been saved', 'lite-shamsi') . '</p>
             </div>');
@@ -74,7 +74,7 @@ class Datekit_Function
 
     public function jalali_cal_settings()
     {
-        if (isset($_POST['submit']) && check_admin_referer('_wpnonce')) {
+        if (isset($_POST['lite_shamsi_submit']) && check_admin_referer('_wpnonce')) {
             update_option('jalali_cal_wc_datepick', $_POST['jalali_cal_wc_datepick'] ?? 0);
             update_option('jalali_cal_wp_presiandate', $_POST['jalali_cal_wp_presiandate'] ?? 0);
             update_option('jalali_cal_persian', $_POST['jalali_cal_persian'] ?? 0);
