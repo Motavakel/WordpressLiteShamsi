@@ -1,7 +1,7 @@
 
 # LiteShamsi (Jalali Calendar Persian Date Converter) WordPress Plugin
 
-![Plugin Version](https://img.shields.io/badge/version-1.3.1-blue)
+![Plugin Version](https://img.shields.io/badge/version-1.3.2-blue)
 [![GitHub license](https://img.shields.io/badge/license-GPL%202-gold.svg)](https://opensource.org/licenses/GPL-2.0)
 [![WordPress compatible](https://img.shields.io/badge/WordPress-6.0%2B-brightgreen.svg)](https://wordpress.org/)
 
