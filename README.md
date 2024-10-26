@@ -11,6 +11,7 @@ In WordPress and WooCommerce, displaying the Shamsi (Jalali) date for us Iranian
 <p align="justify">
 در وردپرس و ووکامرس، نمایش تاریخ شمسی برای ما ایرانیان همیشه چالشی نسبتاً دشوار بوده است. افزونه‌هایی که تاکنون منتشر شده‌اند یا به‌روزرسانی نمی‌شوند و یا تاریخ میلادی را به‌درستی به شمسی تبدیل نمی‌کنند، حداقل برای قالب‌هایی که من طراحی کرده‌ام. به همین دلیل، این افزونه نسبتا سبک و سریع را طراحی کردم تا تبدیل تاریخ به درستی انجام گیرد.
 </p>
+
 ## Features
 
 - **Core WordPress Compatibility**: Effortlessly convert dates throughout the WordPress core to Persian dates.
