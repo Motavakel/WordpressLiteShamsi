@@ -5,7 +5,12 @@
 [![GitHub license](https://img.shields.io/badge/license-GPL%202-gold.svg)](https://opensource.org/licenses/GPL-2.0)
 [![WordPress compatible](https://img.shields.io/badge/WordPress-6.0%2B-brightgreen.svg)](https://wordpress.org/)
 
-As someone who finds joy in designing e-commerce templates, I have always faced the challenge of converting WordPress and WooCommerce dates to Shamsi (Jalali). After researching and studying this area, I developed the "LiteShamsi" plugin, which completely resolves this issue. I hope this plugin brings ease and saves time for my colleagues and valued WordPress users.
+<p align="justify">
+In WordPress and WooCommerce, displaying the Shamsi (Jalali) date for us Iranians has always been a relatively challenging task. The plugins that have been released so far either don’t get updated or don’t correctly convert the Gregorian date to Shamsi, at least for the templates I’ve designed. Therefore, after conducting research and development, I created this lightweight plugin to ensure the date conversion is done correctly.
+</p>
+<p align="justify">
+در وردپرس و ووکامرس، نمایش تاریخ شمسی برای ما ایرانیان همیشه چالشی نسبتاً دشوار بوده است. افزونه‌هایی که تاکنون منتشر شده‌اند یا به‌روزرسانی نمی‌شوند و یا تاریخ میلادی را به‌درستی به شمسی تبدیل نمی‌کنند، حداقل برای قالب‌هایی که من طراحی کرده‌ام. به همین دلیل، این افزونه نسبتا سبک و سریع را طراحی کردم تا تبدیل تاریخ به درستی انجام گیرد.
+</p>
 
 ## Features
 
