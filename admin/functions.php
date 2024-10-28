@@ -43,7 +43,7 @@ class Datekit_Function
     {
         wp_enqueue_style('jalali-cal-datepicker', DATEKIT_ASSETS . '/js/datepicker/jalalidatepicker.min.css');
         wp_enqueue_script('jalali-cal-datepicker', DATEKIT_ASSETS . '/js/datepicker/jalalidatepicker.min.js', ['jquery'], '', true);
-        wp_enqueue_script('jalali-datepicker', DATEKIT_ASSETS .'/js/datepicker/jalali-datepicker.js', array('jquery'), null, true);
+        wp_enqueue_script('jalali-datepicker', DATEKIT_ASSETS . '/js/datepicker/jalali-datepicker.js', array('jquery'), null, true);
         wp_enqueue_script('lite-shamsi-admin-date', DATEKIT_ASSETS . '/js/admin-date.js', ['jquery'], '', true);
         wp_enqueue_script('lite-shamsi-admin-product', DATEKIT_ASSETS . '/js/admin-shamsi.js', ['lite-shamsi-admin-date'], '', true);
     }
@@ -85,8 +85,12 @@ class Datekit_Function
     {
         if (get_option('jalali_cal_persian', 0) == 1) {
             echo "<style>
-                * {font-family: 'vazir';}
-            </style>";
+                body,body * {font-family: 'vazir';}
+                .rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+                    font-family: 'vazir',sans-serif;
+                    font-weight: 600;
+                }
+                </style>";
         }
         if (get_option('jalali_cal_wp_presiandate', 0) == 1) {
             echo "<style>

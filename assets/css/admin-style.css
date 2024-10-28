@@ -1,11 +1,10 @@
 @font-face {
-	font-family: yekan;
+	font-family: vazir;
 	font-style: normal;
 	font-weight: normal;
 	src: url('../fonts/eot/vazir.eot') format('embedded-opentype'),
-		/* IE6-8 */
-		url('../fonts/woffvazir.woff') format('woff'),
-		/* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		url('../fonts/woff/irsans.woff') format('woff'),
+		url('../fonts/woff2/irsans.woff2') format('woff2'),
 		url('../fonts/ttf/vazir.ttf') format('truetype');
 }
 
