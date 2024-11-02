@@ -6,7 +6,7 @@ Version: 1.3.2
 Author: motavakel
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: lite-shamsi
+Text Domain: mo-jalali-calendar
 Domain Path: /languages
 */
 
@@ -20,7 +20,6 @@ define('DATEKIT_FUNC', DATEKIT_DIR . 'admin');
 define('DATEKIT_ASSETS', DATEKIT_URL . 'assets');
 define('DATEKIT_ICON', DATEKIT_URL . 'assets/images/icon.png');
 define('DATEKIT_PBASE', plugin_basename(__FILE__));
-
 
 class Datekit
 {
@@ -57,14 +56,14 @@ class Datekit
     }
 
     public function jalali_cal_action_plugin_loaded(): void {
-        load_plugin_textdomain("lite-shamsi", false, dirname(plugin_basename(__FILE__)).'/languages');
+        load_plugin_textdomain("mo-jalali-calendar", false, dirname(plugin_basename(__FILE__)).'/languages');
     }
 
     public function jalali_cal_plugin_action_links_callback($links) {
         $settings_link = sprintf(
             '<a href="%1$s">%2$s</a>',
             esc_url(admin_url('admin.php?page=jalali_cal')),
-            esc_html__('Settings', 'lite-shamsi') 
+            esc_html__('Settings', 'mo-jalali-calendar') 
         );
 
         array_unshift($links, $settings_link);
@@ -73,8 +72,8 @@ class Datekit
 
     public function admin_notice_minimum_php_version() {
         $message = sprintf(
-            esc_html__('requires "%1$s" version %2$s or greater.', 'lite-shamsi'), 
-            '<strong>' . esc_html__('PHP', 'lite-shamsi') . '</strong>',
+            esc_html__('requires "%1$s" version %2$s or greater.', 'mo-jalali-calendar'), 
+            '<strong>' . esc_html__('PHP', 'mo-jalali-calendar') . '</strong>',
             self::MINIMUM_PHP_VERSION
         );
 
