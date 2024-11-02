@@ -1,22 +1,27 @@
 <?php
+namespace Liteshamsi\admin;
 use Morilog\Jalali\Jalalian;
-defined('ABSPATH') || exit;
 
-class Datekit_InParsian
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+class Molsc_Datekit_InParsian
 {
     private static $instance = null;
     public function __construct()
     {
         global $wp_version;
 
-        add_action('woocommerce_process_shop_order_meta', array($this, 'jalali_cal_process_shop_order_meta_callback'), 100, 1);
-        add_action('woocommerce_process_product_meta', array($this, 'jalali_cal_process_product_meta_callback'), 100, 1);
-        add_action('woocommerce_process_shop_coupon_meta', array($this, 'jalali_cal_process_shop_coupon_meta_callback'), 100, 1);
+        add_action('woocommerce_process_shop_order_meta', array($this, 'molsc_process_shop_order_meta_callback'), 100, 1);
+        add_action('woocommerce_process_product_meta', array($this, 'molsc_process_product_meta_callback'), 100, 1);
+        add_action('woocommerce_process_shop_coupon_meta', array($this, 'molsc_process_shop_coupon_meta_callback'), 100, 1);
 
-        add_filter('wp_date', array($this, 'jalali_cal_wp_date_callback'), 100, 4);
+        add_filter('wp_date', array($this, 'molsc_wp_date_callback'), 100, 4);
 
         if (version_compare($wp_version, '5.3', '<')) {
-            add_filter('date_i18n', array($this, 'jalali_cal_date_i18n_callback'), 100, 4);
+            add_filter('date_i18n', array($this, 'molsc_date_i18n_callback'), 100, 4);
         }
 
     }
@@ -24,7 +29,7 @@ class Datekit_InParsian
     This method examines and processes the date of the
     orders and converts the dates to the Jalali format.
     */
-    public function jalali_cal_process_shop_order_meta_callback($order_id)
+    public function molsc_process_shop_order_meta_callback($order_id)
     {
         if (!isset($_POST['order_date'])) return false;
 
@@ -55,7 +60,7 @@ class Datekit_InParsian
     This method processes the product discount dates and converts them
     into Jalali format.
     */
-    public function jalali_cal_process_product_meta_callback($product_id)
+    public function molsc_process_product_meta_callback($product_id)
     {
         $props = [];
 
@@ -88,13 +93,13 @@ class Datekit_InParsian
     /*
     Convert WordPress core dates to Jalali with full month name display
     */
-    public function jalali_cal_wp_date_callback($date, $format, $timestamp, $timezone)
+    public function molsc_wp_date_callback($date, $format, $timestamp, $timezone)
     {
         $format = str_replace('M', 'F', $format);
 
         try {
             return Jalalian::fromDateTime($timestamp, $timezone)->format($format);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return $date;
         }
     }
@@ -102,7 +107,7 @@ class Datekit_InParsian
     /* 
     Setting the time zone of Iran
     */
-    public function jalali_cal_date_i18n_callback($date, $format, $timestamp, $gmt)
+    public function molsc_date_i18n_callback($date, $format, $timestamp, $gmt)
     {
         $timezone = get_option('timezone_string', 'Asia/Tehran');
 
@@ -112,20 +117,20 @@ class Datekit_InParsian
 
         $timezone = new \DateTimeZone($timezone);
 
-        return $this->jalali_cal_wp_date_callback($date, $format, $timestamp, $timezone);
+        return $this->molsc_wp_date_callback($date, $format, $timestamp, $timezone);
     }
 
     /* 
     This method checks the expiration date of the coupons and converts
     them into Jalali format.
     */
-    public function jalali_cal_process_shop_coupon_meta_callback($coupon_id)
+    public function molsc_process_shop_coupon_meta_callback($coupon_id)
     {
         if (!isset($_POST['expiry_date'])) {
             return false;
         }
 
-        $coupon = new WC_Coupon($coupon_id);
+        $coupon = new \WC_Coupon($coupon_id);
         $expiry_date = wc_clean($_POST['expiry_date']);
 
         if (!empty($expiry_date)) {
