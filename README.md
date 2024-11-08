@@ -18,7 +18,26 @@ In WordPress and WooCommerce, displaying the Shamsi (Jalali) date for us Iranian
 - **WooCommerce Support**: Fully compatible with WooCommerce date pickers, providing a better experience for Persian-speaking customers.
 - **User-Friendly Interface**: Easy to use and integrates seamlessly with existing WordPress themes and plugins.
 
-## Installation
+
+## Installation from WordPress Repository
+
+1. Go to your WordPress admin dashboard.
+2. Navigate to `Plugins > Add New`.
+3. In the search bar, type "**LiteShamsi**" or "**Jalali Calendar Persian Date Converter**".
+4. Locate the plugin in the search results and click on **Install Now**.
+5. Once installed, click on **Activate** to enable the plugin.
+
+You can also download the plugin directly from the [official WordPress repository page](https://wordpress.org/plugins/mo-jalali-calendar/) and upload it manually:
+
+1. Go to the [plugin page](https://wordpress.org/plugins/mo-jalali-calendar/) and click **Download**.
+2. Save the zip file to your computer.
+3. Go to your WordPress admin dashboard.
+4. Navigate to `Plugins > Add New` and click **Upload Plugin**.
+5. Choose the downloaded zip file and click **Install Now**.
+6. After installation, click on **Activate Plugin** to start using it.
+
+
+## Manual Installation
 
 1. Download the plugin zip file.
 2. Go to the WordPress admin area.
