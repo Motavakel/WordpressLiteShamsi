@@ -22,7 +22,9 @@ define('MOLSC_DATEKIT_ASSETS', MOLSC_DATEKIT_URL . 'assets');
 define('MOLSC_DATEKIT_ICON', MOLSC_DATEKIT_URL . 'assets/images/icon.png');
 define('MOLSC_DATEKIT_PBASE', plugin_basename(__FILE__));
 
+
 class Molsc_Datekit
+
 {
     const MINIMUM_PHP_VERSION = '7.4';
     private const VERSION = '1.3.3';
@@ -56,14 +58,18 @@ class Molsc_Datekit
         register_uninstall_hook(__FILE__, array($this, 'molsc_remove_options'));
     }
 
+
     public function molsc_action_plugin_loaded(): void {
+
         load_plugin_textdomain("mo-jalali-calendar", false, dirname(plugin_basename(__FILE__)).'/languages');
     }
 
     public function molsc_plugin_action_links_callback($links) {
         $settings_link = sprintf(
             '<a href="%1$s">%2$s</a>',
+
             esc_url(admin_url('admin.php?page=molsc')),
+
             esc_html__('Settings', 'mo-jalali-calendar') 
         );
 

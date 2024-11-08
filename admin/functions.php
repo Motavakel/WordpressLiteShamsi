@@ -71,6 +71,7 @@ class Molsc_Datekit_Function
         wp_enqueue_script('molsc-datepicker-classic', MOLSC_DATEKIT_ASSETS . '/js/datepicker/jalali-datepicker.js', ['jquery'], null, true);
         wp_enqueue_script('molsc-admin-date', MOLSC_DATEKIT_ASSETS . '/js/admin-date.js', ['jquery'], '', true);
         wp_enqueue_script('molsc-admin-product', MOLSC_DATEKIT_ASSETS . '/js/admin-shamsi.js', ['molsc-admin-date'], '', true);
+
     }
 
     public function admin_menu_callback()
@@ -113,6 +114,7 @@ class Molsc_Datekit_Function
     public function molsc_admin_page_html()
     {
         require_once MOLSC_DATEKIT_FUNC . '/template/admin-panel.php';
+
     }
 }
 
