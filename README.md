@@ -5,6 +5,12 @@
 [![GitHub license](https://img.shields.io/badge/license-GPL%202-gold.svg)](https://opensource.org/licenses/GPL-2.0)
 [![WordPress compatible](https://img.shields.io/badge/WordPress-6.0%2B-brightgreen.svg)](https://wordpress.org/)
 
+![محیط پلاگین](3.png)
+
+<br/>
+<br/>
+
+
 ![محیط پلاگین](1.png)
 
 <p align="justify">
