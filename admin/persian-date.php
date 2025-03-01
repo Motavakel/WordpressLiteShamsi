@@ -12,18 +12,11 @@ class Molsc_Datekit_InParsian
     private static $instance = null;
     public function __construct()
     {
-        global $wp_version;
-
         add_action('woocommerce_process_shop_order_meta', array($this, 'molsc_process_shop_order_meta_callback'), 100, 1);
         add_action('woocommerce_process_product_meta', array($this, 'molsc_process_product_meta_callback'), 100, 1);
         add_action('woocommerce_process_shop_coupon_meta', array($this, 'molsc_process_shop_coupon_meta_callback'), 100, 1);
 
         add_filter('wp_date', array($this, 'molsc_wp_date_callback'), 100, 4);
-
-        if (version_compare($wp_version, '5.3', '<')) {
-            add_filter('date_i18n', array($this, 'molsc_date_i18n_callback'), 100, 4);
-        }
-
     }
     /* 
     This method examines and processes the date of the
@@ -90,8 +83,10 @@ class Molsc_Datekit_InParsian
         $product->save();
     }
 
+
     /*
-    Convert WordPress core dates to Jalali with full month name display
+    Convert a given Gregorian timestamp to the Jalali calendar.
+    Replaces 'M' with 'F' in the format to ensure full month names.
     */
     public function molsc_wp_date_callback($date, $format, $timestamp, $timezone)
     {
@@ -102,22 +97,6 @@ class Molsc_Datekit_InParsian
         } catch (\Exception $e) {
             return $date;
         }
-    }
-
-    /* 
-    Setting the time zone of Iran
-    */
-    public function molsc_date_i18n_callback($date, $format, $timestamp, $gmt)
-    {
-        $timezone = get_option('timezone_string', 'Asia/Tehran');
-
-        if (empty($timezone)) {
-            $timezone = 'Asia/Tehran';
-        }
-
-        $timezone = new \DateTimeZone($timezone);
-
-        return $this->molsc_wp_date_callback($date, $format, $timestamp, $timezone);
     }
 
     /* 
