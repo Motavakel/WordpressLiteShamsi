@@ -1,39 +1,38 @@
 
 ### LiteShamsi (Jalali Calendar Persian Date Converter) WordPress Plugin
 
-![Plugin Version](https://img.shields.io/badge/version-1.3.3-blue)
+![Plugin Version](https://img.shields.io/badge/version-1.3.4-blue)
 [![GitHub license](https://img.shields.io/badge/license-GPL%202-gold.svg)](https://opensource.org/licenses/GPL-2.0)
 [![WordPress compatible](https://img.shields.io/badge/WordPress-6.0%2B-brightgreen.svg)](https://wordpress.org/)
 
 ![محیط پلاگین](3.png)
-
 <br/>
-<br/>
-
 
 ![محیط پلاگین](1.png)
 
 <p align="justify">
 Displaying Persian dates in WordPress and WooCommerce has always been a challenging task for Iranian users. Most existing plugins are either outdated or fail to correctly convert Gregorian dates to the Persian calendar, especially in the themes I have designed. To permanently resolve this issue, I have developed this lightweight and fast plugin.
+
+
+<p align="justify">
+در وردپرس و ووکامرس، نمایش تاریخ شمسی برای ما ایرانیان همیشه چالشی نسبتاً دشوار بوده است. افزونه‌هایی که تاکنون منتشر شده‌اند یا به‌روزرسانی نمی‌شوند و یا تاریخ میلادی را به‌درستی به شمسی تبدیل نمی‌کنند، حداقل برای قالب‌هایی که من طراحی کرده‌ام. به همین دلیل، این افزونه نسبتا سبک و سریع را طراحی کردم تا این مشکل برای همیشه برطرف شود.
   
 Version 1.3.4
 
+<p align="justify">
 In this update, to optimize the code and enhance compatibility with modern versions of WordPress, support for versions older than 5.4 has been completely removed. As a result, this plugin will no longer function properly on WordPress versions below 5.4.
 
 Additionally, several minor bugs have been fixed in this release to improve the plugin's stability and overall performance.
 
 
-![عملکرد عالی در محیط ووکامرس](2.png)
-#### حس خوب تبدیل پایدار و بدون باگ تاریخ میلادی به شمسی یعنی تصویر فوق
-
+ ورژن 1.3.4
 <p align="justify">
-در وردپرس و ووکامرس، نمایش تاریخ شمسی برای ما ایرانیان همیشه چالشی نسبتاً دشوار بوده است. افزونه‌هایی که تاکنون منتشر شده‌اند یا به‌روزرسانی نمی‌شوند و یا تاریخ میلادی را به‌درستی به شمسی تبدیل نمی‌کنند، حداقل برای قالب‌هایی که من طراحی کرده‌ام. به همین دلیل، این افزونه نسبتا سبک و سریع را طراحی کردم تا این مشکل برای همیشه برطرف شود.
-
-1.3.4
-  <br/>
 در این نسخه، با هدف بهینه‌سازی کد و افزایش سازگاری با نسخه‌های جدید وردپرس، پشتیبانی از وردپرس نسخه‌های قدیمی‌تر از 5.4 به‌طور کامل حذف شده است. بنابراین، این افزونه دیگر روی نسخه‌های قبل از 5.4 به‌درستی کار نخواهد کرد.
 
 همچنین، در این به‌روزرسانی برخی باگ‌های جزئی برطرف شده‌اند تا عملکرد افزونه بهینه‌تر و پایدارتر شود.
+
+![عملکرد عالی در محیط ووکامرس](2.png)
+#### حس خوب تبدیل پایدار و بدون باگ تاریخ میلادی به شمسی یعنی تصویر فوق
 
   
   <br/>
