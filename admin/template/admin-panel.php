@@ -1,67 +1,111 @@
-
-<?php
-if (!defined('ABSPATH')) {
-    exit;
+@font-face {
+font-family: vazir;
+font-style: normal;
+font-weight: normal;
+src: url('../fonts/eot/vazir.eot') format('embedded-opentype'),
+url('../fonts/woff/irsans.woff') format('woff'),
+url('../fonts/woff2/irsans.woff2') format('woff2'),
+url('../fonts/ttf/vazir.ttf') format('truetype');
 }
-?>
 
-<div class="wrap <?php strpos(get_locale(), 'fa') === 0 ? 'mo-jalali-calendar-rtl' : 'mo-jalali-calendar-ltr' ?> ">
-    <div class="flex-container">
-        <h2><?php global $title;
-            echo esc_html($title);
-            ?></h2>
-           <h2><?php echo esc_html__('Version : ', 'mo-jalali-calendar') . esc_html($GLOBALS['molscversion']); ?></h2>
+#Jaa, #Jhh, #Jjj, #Jmn {
+font-size: 12px;
+padding: 1px;
+}
+#Jhh, #Jjj, #Jmn {
+width: 2em;
+}
+#Jaa {
+width: 3.4em;
+}
 
-    </div>
-    <form method="post" class="block-container">
-        <table class="form-table">
-            <tbody>
-                <?php
-                function molsc_render_checkbox_field($option_name, $label, $title)
-                {
-                    $checked = get_option($option_name, 0) == 1 ? 'checked' : '';
-                    echo
-                    "<tr>
-                        <td class='td-full'>
-                            <h2 class='title'>".esc_html($title)."</h2>
-                            <label class='switch' for='".esc_attr($option_name)."'>
-                                <input name='".esc_attr($option_name)."' id='".esc_attr($option_name)."' type='checkbox' value='1' " . esc_attr($checked) . ">
-                                <span class='slider'></span>
-                            </label>
-                            <span class='switch-label'>".esc_html($label)."</span><br />
-                        </td>
-                    </tr>";
-                }
+.switch {
+position: relative;
+display: inline-block;
+width: 40px;
+height: 20px;
+margin: 10px 0px;
+}
 
-                molsc_render_checkbox_field(
-                    'molsc_wp_presiandate',
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
 
-                    esc_html__('Convert WordPress core date from Gregorian to Jalali', 'mo-jalali-calendar'),
-                    esc_html__('Convert WordPress core date to Jalali', 'mo-jalali-calendar')
-                );
-                if (in_array('woocommerce/woocommerce.php', get_option('active_plugins'))) {
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
 
-                    molsc_render_checkbox_field(
-                        'molsc_wc_datepicker',
+.slider::before {
+position: absolute;
+content: "";
+height: 13px;
+width: 13px;
+right: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
 
-                        esc_html__('Convert WordPress date pickers from Gregorian to Jalali', 'mo-jalali-calendar'),
-                        esc_html__('Convert Gregorian date pickers to Jalali', 'mo-jalali-calendar')
-                    );
-                }
+input:checked+.slider {
+background-color: #2271b1;
+}
 
-                molsc_render_checkbox_field(
-                    'molsc_persian',
+input:checked+.slider:before {
+transform: translateX(-19px);
+}
 
-                    esc_html__('Make the panel font and typography Persian', 'mo-jalali-calendar'),
-                    esc_html__('Convert Latin numbers in the panel to Persian', 'mo-jalali-calendar')
-                );
+.switch:hover input:checked+.slider {
+box-shadow: 0 0 1px #011e36;
+}
 
-                ?>
-            </tbody>
-        </table>
-        <p class="submit">
-            <input type="submit" name="lite_shamsi_submit" id="submit" class="button button-primary" value="<?php echo esc_html__('Save', 'mo-jalali-calendar') ?>">
-            <?php wp_nonce_field('_wpnonce', '_wpnonce'); ?>
-        </p>
-    </form>
-</div>
+.switch-label {
+margin-left: 10px;
+font-size: 14px;
+vertical-align: middle;
+}
+
+.flex-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 5px 20px;
+background-color: #f9f9f9;
+border: 1px solid #e1e1e1;
+border-radius: 8px;
+margin-bottom: 10px;
+}
+
+.block-container {
+padding: 5px 20px;
+background-color: #f9f9f9;
+border: 1px solid #e1e1e1;
+border-radius: 8px;
+margin-bottom: 20px;
+}
+
+.jalali-cal-notice-rtl,.notice {
+margin: 2.2rem 2px 2px 20px;
+transition: 0.8s;
+}
+
+
+.lite-shamsi-rtl {
+direction: rtl;
+text-align: right;
+}
+
+.lite-shamsi-ltr {
+direction: ltr;
+text-align: left;
+}
