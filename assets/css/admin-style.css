@@ -94,15 +94,11 @@ input:checked+.slider:before {
 	margin-bottom: 20px;
 }
 
-.jalali-cal-notice-rtl {
-	margin: 20px 2px 2px 20px;
+.jalali-cal-notice-rtl,.notice {
+	margin: 2.2rem 2px 2px 20px;
 	transition: 0.8s;
 }
 
-.jalali-cal-notice-ltr {
-	margin: 20px 20px 2px 2px;
-	transition: 0.8s;
-}
 
 .lite-shamsi-rtl {
 	direction: rtl;

@@ -1,16 +1,16 @@
-
 <?php
 if (!defined('ABSPATH')) {
     exit;
 }
 ?>
 
-<div class="wrap <?php strpos(get_locale(), 'fa') === 0 ? 'mo-jalali-calendar-rtl' : 'mo-jalali-calendar-ltr' ?> ">
+<div
+    class="wrap lite-shamsi-wrap <?php strpos(get_locale(), 'fa') === 0 ? 'mo-jalali-calendar-rtl' : 'mo-jalali-calendar-ltr' ?> ">
     <div class="flex-container">
         <h2><?php global $title;
             echo esc_html($title);
             ?></h2>
-           <h2><?php echo esc_html__('Version : ', 'mo-jalali-calendar') . esc_html($GLOBALS['molscversion']); ?></h2>
+        <h2><?php echo esc_html__('Version : ', 'mo-jalali-calendar') . esc_html($GLOBALS['molscversion']); ?></h2>
 
     </div>
     <form method="post" class="block-container">
@@ -60,7 +60,8 @@ if (!defined('ABSPATH')) {
             </tbody>
         </table>
         <p class="submit">
-            <input type="submit" name="lite_shamsi_submit" id="submit" class="button button-primary" value="<?php echo esc_html__('Save', 'mo-jalali-calendar') ?>">
+            <input type="submit" name="lite_shamsi_submit" id="submit" class="button button-primary"
+                value="<?php echo esc_html__('Save', 'mo-jalali-calendar') ?>">
             <?php wp_nonce_field('_wpnonce', '_wpnonce'); ?>
         </p>
     </form>
